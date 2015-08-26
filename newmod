@@ -1,0 +1,18 @@
+#!/bin/bash
+if [ -z "$1" ]
+then
+	echo "Usage: newmod module_name"
+else
+	mkdir $1
+	chmod 775 $1
+	f=`dirname $0`
+	cp $f/newmodpak/template.module $1/$1.module
+	cp $f/newmodpak/template.info $1/$1.info
+  cp $f/newmodpak/template.install $1/$1.install
+  cp $f/newmodpak/CHANGELOG.txt $1/CHANGELOG.txt
+  cp $f/newmodpak/README.md $1/README.md
+  cp $f/newmodpak/.gitignore $1/.gitignore
+  cp -R $f/newmodpak/css $1/css
+  cp -R $f/newmodpak/js $1/js
+	cd $1
+fi

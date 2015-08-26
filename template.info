@@ -1,0 +1,11 @@
+name = Stanford Module
+description = Does these things...
+core = 7.x
+package = Stanford
+version = 7.x-1.0-dev
+project = stanford_module
+dependencies[] = block
+; stylesheets[all][] = css/stanford_module.css
+; scripts[] = js/stanford_module.js
+project status url = https://github.com/SU-SWS/stanford_module
+files[] = stanford_module.install
