@@ -5,8 +5,18 @@ engines:
     enabled: true
   phpcodesniffer:
     enabled: true
+    config:
+      file_extensions: "php,inc,install,module,profile"
+      standard: "Drupal"
   phpmd:
     enabled: true
+    config:
+      file_extensions:
+      - inc
+      - module
+      - profile
+      - php
+      - install
   scss-lint:
     enabled: true
 ratings:
@@ -14,6 +24,20 @@ ratings:
   - "**.inc"
   - "**.module"
   - "**.profile"
+  - "**.php"
+  - "**.install"
+  - "**.css"
+  - "**.scss"
+  - "**.sass"
+  - "**.js"
 ##exclude these files/paths
 exclude_paths:
 - "**.features.**"
+- "**.views_default.inc"
+- "**.field_group.inc"
+- "**.ds.inc"
+- "**.bean.inc"
+- "**.context.inc"
+- "test/**/*"
+- "**/vendor/**/*"
+- "**.min.*"
