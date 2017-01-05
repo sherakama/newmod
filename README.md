@@ -4,7 +4,7 @@
 Maintainers: [jbickar](https://github.com/jbickar), [sherakama](https://github.com/sherakama)
 [Changelog.txt](CHANGELOG.txt)
 
-![WCAG Conformance 2.0 AA Badge](https://www.w3.org/WAI/wcag2AA-blue.png) | 201X-XX-XX
+[![WCAG Conformance 2.0 AA Badge](https://www.w3.org/WAI/wcag2AA-blue.png)](https://www.w3.org/TR/WCAG20/) Date: 201X-XX-XX
 
 The Stanford Module feature is used to ...
 
