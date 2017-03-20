@@ -1,20 +1,54 @@
 #!/bin/bash
+
+# Check to see if a name was given. Must have a name.
 if [ -z "$1" ]
 then
-	echo "Usage: newmod module_name"
-else
-	mkdir $1
-	chmod 775 $1
-	f=`dirname $0`
-	cp $f/template.module $1/$1.module
-	cp $f/template.info $1/$1.info
-  cp $f/template.install $1/$1.install
-  cp $f/CHANGELOG.txt $1/CHANGELOG.txt
-	cp $f/LICENSE.txt $1/LICENSE.txt
-  cp $f/README.md $1/README.md
-  cp $f/.gitignore $1/.gitignore
-	cp $f/.codeclimate.yml $1/.codeclimate.yml
-  cp -R $f/css $1/css
-  cp -R $f/js $1/js
-	cd $1
+	echo "Usage: newmod module_name \n"
+	echo "Usage: newmod module_name branch \n"
+	echo "Usage: newmod my_new_module 8.x-1.x \n"
+	exit 1;
+fi
+
+# Check to see if a branch was specified.
+if [ -z "$2" ]
+then
+	branch="7.x-1.x"
+fi
+
+# Start the clone.
+if [[ ! -z "$1" ]]
+then
+
+	# Clone from github with a specific name and branch. Shallow depth for
+	# quick copy.
+	name=$1
+	git clone git@github.com:SU-SWS/stanford_module_example $name -b $branch --depth=1
+
+	# If clone failed exit.
+	if [[ ! -d $name ]]
+	then
+		exit 1;
+	fi
+
+	# cd in to the new dir and remove the git folders.
+	cd $name
+	rm -Rf .git
+	chmod -R 0755 ./
+
+	# Change the name of all the files.
+	default="stanford_module_example"
+	for i in $default.*; do
+    if [ -e "$i" ]; then
+        mv "$i" "$name.${i##*.}"
+        echo "$i to $name.${i##*.}";
+    fi
+	done
+
+	# Replace all the names in the files
+	find ./ -type f -exec sed -i '' -e "s/stanford_module_example/$name/g" {} \;
+
+	# Replace all the names in the files.
+	find ./ -type f -exec sed -i '' -e "s/stanford_module/$name/g" {} \;
+
+
 fi
