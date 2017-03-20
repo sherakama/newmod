@@ -1,5 +1,5 @@
 # newmod
-Creates a new module with some default stuff
+Creates a new module with the defaults from stanford_module_example
 
 ### Install
 Place this file in an executable part of your bash path eg: /usr/bin/, /usr/local/bin/, or ~/bin/
