@@ -13,6 +13,8 @@ fi
 if [ -z "$2" ]
 then
 	branch="7.x-1.x"
+else
+	branch=$2
 fi
 
 # Start the clone.
@@ -49,6 +51,5 @@ then
 
 	# Replace all the names in the files.
 	find ./ -type f -exec sed -i '' -e "s/stanford_module/$name/g" {} \;
-
 
 fi
