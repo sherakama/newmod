@@ -6,8 +6,8 @@ Place this file in an executable part of your bash path eg: /usr/bin/, /usr/loca
 
 ### Usage
 1. Navigate to the directory you wish to create a new module in. eg: cd sites/all/modules/stanford/
-2. Execute newmod 
-eg: `newmod my_module_name`
-eg: `newmod my_drupal_8_module 8.x-1.x`
+2. Execute newmod    
+eg: `newmod my_module_name`   
+eg: `newmod my_drupal_8_module 8.x-1.x`   
 
 Then you can begin writing your new module.
