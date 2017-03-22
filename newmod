@@ -41,8 +41,8 @@ then
 	default="stanford_module_example"
 	for i in $default.*; do
     if [ -e "$i" ]; then
-        mv "$i" "$name.${i##*.}"
-        echo "$i to $name.${i##*.}";
+        mv "$i" ${i//stanford_module_example/$name}
+        echo "$i to "${i//stanford_module_example/$name};
     fi
 	done
 
