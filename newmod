@@ -40,7 +40,6 @@ then
 	# Change the name of all the files.
 	default="stanford_module_example"
 	for i in \{ `find . -name "$default.*"` \}; do
-		echo "$i"
     if [ -e "$i" ]; then
         mv "$i" ${i//stanford_module_example/$name}
         echo "$i to "${i//stanford_module_example/$name};
